@@ -11,9 +11,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-app.get('/',function(req,res)
+app.use('/api',route);
+app.use('/',function(req,res)
 {
 	res.send('Hello World')
 })
-app.use('/api',route);
+
 app.listen(3000, () => console.log('Server starts'))

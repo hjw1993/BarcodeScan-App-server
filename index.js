@@ -4,7 +4,7 @@ var app = express();
 var route = require('./config/routes')
 app.set('port',process.env.PORT||3000);
 var bodyParser = require('body-parser')
-// require('./app/models/db')
+require('./app/models/db')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))

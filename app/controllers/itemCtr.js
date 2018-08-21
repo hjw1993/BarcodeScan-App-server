@@ -35,7 +35,7 @@ module.exports.searchItemByUpc=function(req,res)
 				else
 				{
 					res.status(200);
-					res.json({message:'Item is not found test is ok',success:false})
+					res.json({message:'Item is not found',success:false})
 				}
 			}
 			

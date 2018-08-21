@@ -1,0 +1,48 @@
+<h1 style="text-align: center;">Welcome to Item search</h1>
+<div style="margin-top: 30px">
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Product Name</th>
+	      <th scope="col">UPC code</th>
+	      
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	{{#each items}}
+	    <tr>
+	      <th scope="row">{{_id}}</th>
+	      <td>{{name}}</td>
+	      <td>{{upc}}</td>
+	      
+	    </tr>
+	    {{/each}}
+	    
+	  </tbody>
+	</table>
+</div>
+
+
+<h3 style="text-align: center;">Save Product</h3>
+<form action="{{homeUrl}}api/save" method="post" >
+	
+		  <div class="form-group" style="width: 50%;margin: auto;">
+		    <label for="productName">product name</label>
+		    <input type="text" class="form-control" name="name" id="productName" aria-describedby="productName" placeholder="Enter product's name">
+		    
+		  </div>
+		  <div class="form-group" style="width: 50%;margin: auto;">
+		    <label for="UPCCode">UPC Code</label>
+		    <input type="text" class="form-control" name="upc" id="UPCCode" placeholder="UPC code">
+		  </div>
+	  <div style="margin-left: 50%;margin-top: 30px">
+	  	<button type="submit" class="btn btn-primary" style="">Submit</button>
+	  </div>
+</form>
+{{#if err}}
+<h2 class="alert alert-danger">{{err}}</h2>
+{{/if}}
+{{#if message}}
+<h2 class="alert alert-success">{{message}}</h2>
+{{/if}}

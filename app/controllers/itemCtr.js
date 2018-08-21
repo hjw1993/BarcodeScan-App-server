@@ -8,7 +8,7 @@ var apiOptions = {
 }
 if(process.env.NODE_ENV === 'production')
 {
-	apiOptions.server=''
+	apiOptions.server='https://pure-retreat-19989.herokuapp.com/'
 }
 
 

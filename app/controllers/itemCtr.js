@@ -53,7 +53,7 @@ module.exports.searchItemByUpc=function(req,res)
 
 module.exports.saveItem=function(req,res)
 {
-	console.log(req.body)
+	
 	if(req.body&&req.body.upc&&req.body.name)
 	{
 		item.create({upc:req.body.upc,name:req.body.name},function(err,item)
@@ -63,7 +63,7 @@ module.exports.saveItem=function(req,res)
 	}
 	else
 	{
-		renderHomePage(req,res,null,err)
+		renderHomePage(req,res,null,"Please provide UPC code and product's name")
 		// res.json({message:'Please provide the name and upc of item',success:false})
 	}
 }
